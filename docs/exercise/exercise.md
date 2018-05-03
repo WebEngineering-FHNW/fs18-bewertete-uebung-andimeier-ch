@@ -54,7 +54,14 @@ Falls Sie denken, dass das zu einfach ist, können Sie aussuchen :-)
 
 ## Project confirmation
 
-< to be filled by lecturer>
+confirmed.
+
+Sie können gerne das wieviel-schlafen angehen. Man soll immer das machen, wo das Herz dran hängt.
+Es hat genügend features um eine gute Note zu erreichen: Geburtstage oder andere Ereignisse bewirtschaften,
+kindgerechte Auswahl für die Anzeige (evtl. per Bild?), graphische Anzeige der Tage? ...
+
+Have fun
+D. König
 
 
 ## Project delivery <to be filled by student>
