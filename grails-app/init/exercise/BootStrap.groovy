@@ -10,27 +10,27 @@ class BootStrap {
         Person mael = new Person(name: "Mael").save(failOnError: true)
 
         Event andiBday = new Event(
-            date: Date.parse("dd.MM.yyyy", "02.09.1982"),
+            date: Date.parse("dd.MM.yyyy", "02.09.2018"),
             description: "Andi's Geburtstag",
             person: andi
         ).save(failOnError: true)
         Event saraBday = new Event(
-            date: Date.parse("dd.MM.yyyy", "19.04.1982"),
+            date: Date.parse("dd.MM.yyyy", "19.04.2019"),
             description: "Sara's Geburtstag",
             person: sara
         ).save(failOnError: true)
         Event joelleBday = new Event(
-            date: Date.parse("dd.MM.yyyy", "18.01.2010"),
+            date: Date.parse("dd.MM.yyyy", "18.01.2019"),
             description: "Joëlle's Geburtstag",
             person: joelle
         ).save(failOnError: true)
         Event tabitaBday = new Event(
-            date: Date.parse("dd.MM.yyyy", "10.12.2012"),
+            date: Date.parse("dd.MM.yyyy", "10.12.2018"),
             description: "Tabita's Geburtstag",
             person: tabita
         ).save(failOnError: true)
         Event maelBday = new Event(
-            date: Date.parse("dd.MM.yyyy", "15.01.2015"),
+            date: Date.parse("dd.MM.yyyy", "15.01.2019"),
             description: "Maels's Geburtstag",
             person: mael
         ).save(failOnError: true)

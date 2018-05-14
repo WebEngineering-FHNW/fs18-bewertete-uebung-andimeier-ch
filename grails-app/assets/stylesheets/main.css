@@ -9,13 +9,16 @@
 
 
 .list-item {
-  display: flex;
   padding: .5rem 1rem;
   border-bottom: 1px solid lightgray;
 }
 
 .list-item:first-child {
   border-top: 1px solid lightgray;
+}
+
+.list-item a {
+  display: flex;
 }
 
 .list-image {

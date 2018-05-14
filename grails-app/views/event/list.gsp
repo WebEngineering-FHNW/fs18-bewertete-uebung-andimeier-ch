@@ -8,6 +8,7 @@
 
 <div class="columns">
 
+  %{--Events list--}%
   <div class="column is-half">
     <nav class="navbar is-primary">
       <div class="navbar-menu">
@@ -21,7 +22,7 @@
             </div>
             <div class="navbar-dropdown dropdown-persons">
               <g:each var="person" in="${persons}">
-                <a class="navbar-item" href="/event/list?person=${person}">
+                <a class="navbar-item" href="/event/list?person=${person.id}">
                   <asset:image src="${person}.svg" alt="Avatar" class="dropdown-avatar" />
                 </a>
               </g:each>
@@ -39,19 +40,20 @@
     </nav>
 
     <ul class="list">
-      <g:render template="listItem" collection="${events}" />
+      <g:render template="listItem" var="ev" collection="${events}" model="[activeEvent: activeEvent]" />
     </ul>
   </div>
 
+  %{--Details panel--}%
   <div id="details" class="column is-half">
     <button id="detailsHide" class="delete is-inline-block-mobile"></button>
 
     <div class="is-centered">
       <p class="has-text-centered">
         Du musst noch<br>
-        <span class="is-size-1">123</span><br>
+        <span class="is-size-1">${remainingDays}</span><br>
         mal schlafen<br>
-        bis Tabita's Geburtstag
+        bis ${eventTitle}
       </p>
     </div>
   </div>
