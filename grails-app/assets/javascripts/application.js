@@ -11,11 +11,18 @@
 //= require_self
 
 if (typeof jQuery !== 'undefined') {
-    (function($) {
-        $(document).ajaxStart(function() {
+    (function ($) {
+        $(document).ajaxStart(function () {
             $('#spinner').fadeIn();
-        }).ajaxStop(function() {
+        }).ajaxStop(function () {
             $('#spinner').fadeOut();
         });
     })(jQuery);
+}
+
+
+// console.log('Hallo from app.js');
+
+function toggleSubnav(event) {
+    $(event.currentTarget).find('.navbar-dropdown').fadeToggle('fast');
 }

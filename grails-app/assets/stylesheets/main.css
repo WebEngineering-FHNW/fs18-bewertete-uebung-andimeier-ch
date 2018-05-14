@@ -16,5 +16,13 @@
 
 .list-header {
   font-weight: bold;
-  color: darkcyan;
+}
+
+.dropdown-persons a.navbar-item {
+  padding-right: 1rem;
+  justify-content: center;
+}
+
+.dropdown-persons img {
+  max-height: 3rem;
 }

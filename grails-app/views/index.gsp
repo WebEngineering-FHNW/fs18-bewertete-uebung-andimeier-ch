@@ -60,6 +60,10 @@
                 this application, click on each to execute its default action:
             </p>
 
+            <p>
+                IP Address: ${ InetAddress.getLocalHost() }
+            </p>
+
             <div id="controllers" role="navigation">
                 <h2>Available Controllers:</h2>
                 <ul>
