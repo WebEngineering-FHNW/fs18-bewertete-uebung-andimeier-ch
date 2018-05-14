@@ -20,9 +20,23 @@ if (typeof jQuery !== 'undefined') {
     })(jQuery);
 }
 
-
-// console.log('Hallo from app.js');
-
+/* Toggle subnav for person filter */
 function toggleSubnav(event) {
     $(event.currentTarget).find('.navbar-dropdown').fadeToggle('fast');
 }
+
+/* Show details on click */
+var listItems = $('.list-item');
+console.log(listItems);
+listItems.each(function() {
+    $(this).click(showDetails);
+});
+
+function showDetails() {
+    $('#details').show();
+}
+
+/* Hide details */
+$('#detailsHide').click(function() {
+    $('#details').hide();
+});
