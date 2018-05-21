@@ -1,15 +1,22 @@
 package exercise
 
+import grails.validation.ValidationException
 import groovy.time.TimeCategory
+import static org.springframework.http.HttpStatus.CREATED
+import static org.springframework.http.HttpStatus.NOT_FOUND
+import static org.springframework.http.HttpStatus.NO_CONTENT
+import static org.springframework.http.HttpStatus.OK
 
 class EventController {
 
-    def list() {
+    EventService eventService
+
+    def index() {
         def personId = params.person ? params.int('person') : 0
         def eventId = params.event ? params.int('event') : 0
 
-        render view: 'list',
-            model:[
+        render view: 'index',
+            model: [
                 events: eventListByPerson(personId),
                 persons: Person.list(),
                 remainingDays: calculateRemainingDays(eventId),
@@ -17,6 +24,82 @@ class EventController {
                 activeEvent: eventId,
             ]
     }
+
+    def show(Long id) {
+        respond eventService.get(id)
+    }
+
+    def create() {
+        respond new Event(params)
+    }
+
+    def save(Event event) {
+        if (event == null) {
+            notFound()
+            return
+        }
+
+        try {
+            eventService.save(event)
+        } catch (ValidationException e) {
+            respond event.errors, view:'create'
+            return
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.created.message', args: [message(code: 'event.label', default: 'Person'), event.id])
+                redirect event
+            }
+            '*' { respond event, [status: CREATED] }
+        }
+    }
+
+    def edit(Long id) {
+        respond eventService.get(id)
+    }
+
+    def update(Event event) {
+        if (event == null) {
+            notFound()
+            return
+        }
+
+        try {
+            eventService.save(event)
+        } catch (ValidationException e) {
+            respond event.errors, view:'edit'
+            return
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'event.label', default: 'Person'), event.id])
+                redirect event
+            }
+            '*'{ respond event, [status: OK] }
+        }
+    }
+
+    def delete(Long id) {
+        if (id == null) {
+            notFound()
+            return
+        }
+
+        eventService.delete(id)
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'event.label', default: 'Event'), id])
+                redirect action:"index", method:"GET"
+            }
+            '*'{ render status: NO_CONTENT }
+        }
+    }
+
+
+
 
     private def eventListByPerson(int personId) {
         if (personId != 0) {
@@ -50,6 +133,16 @@ class EventController {
         if (eventId == 0) return '...'
         def event = Event.load(eventId)
         return event.description
+    }
+
+    protected void notFound() {
+        request.withFormat {
+            form multipartForm {
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'event.label', default: 'Person'), params.id])
+                redirect action: "index", method: "GET"
+            }
+            '*'{ render status: NOT_FOUND }
+        }
     }
 
 }

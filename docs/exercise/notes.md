@@ -23,3 +23,9 @@
 
 ## Fields Plugin
 [Fields Plugin Docu](http://grails3-plugins.github.io/fields/snapshot/guide/index.html)
+
+[Customizing Field Rendering](http://grails3-plugins.github.io/fields/snapshot/guide/customizingFieldRendering.html)
+
+
+## Fontawesome
+[Icons](https://fontawesome.com/v4.7.0/icons/)

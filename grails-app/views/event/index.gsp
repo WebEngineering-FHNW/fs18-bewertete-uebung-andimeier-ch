@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'event.label', default: 'Event')}" />
-        <title><g:message code="default.list.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#list-event" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="list-event" class="content scaffold-list" role="main">
-            <h1><g:message code="default.list.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-                <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <f:table collection="${eventList}" />
+<head>
+    <meta name="layout" content="main"/>
+</head>
 
-            <div class="pagination">
-                <g:paginate total="${eventCount ?: 0}" />
+<body>
+
+<div class="columns">
+
+    %{--Events index--}%
+    <div class="column is-half">
+        <nav class="navbar is-primary">
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item">
+                        <i class="fa fa-lg fa-birthday-cake" aria-hidden="true"></i>
+                    </div>
+
+                    <div class="navbar-item has-dropdown" onclick="toggleSubnav(event)">
+                        <div href="" class="navbar-link">
+                            <i class="fa fa-lg fa-user" aria-hidden="true"></i>
+                        </div>
+
+                        <div class="navbar-dropdown dropdown-persons">
+                            <g:each var="person" in="${persons}">
+                                <a class="navbar-item" href="/event?person=${person.id}">
+                                    <asset:image src="${person}.svg" alt="Avatar" class="dropdown-avatar"/>
+                                </a>
+                            </g:each>
+                            <a href="/event" class="navbar-item">Alle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <a href="/event/create" class="navbar-item" title="Ereinis hinzufügen">
+                        <i class="fa fa-lg fa-plus" aria-hidden="true"></i>
+                    </a>
+                </div>
             </div>
+        </nav>
+
+        <ul class="list">
+            <g:render template="listItem" var="event" collection="${events}" model="[activeEvent: activeEvent]"/>
+        </ul>
+    </div>
+
+    %{--Details panel--}%
+    <div id="details" class="column is-half">
+        <button id="detailsHide" class="delete is-inline-block-mobile"></button>
+
+        <g:if test="${flash.message}">
+            <div class="notification is-info" role="status">${flash.message}</div>
+        </g:if>
+
+        <div class="is-centered">
+            <p class="has-text-centered">
+                Du musst noch<br>
+                <span class="is-size-1">${remainingDays}</span><br>
+                mal schlafen<br>
+                bis ${eventTitle}
+            </p>
         </div>
-    </body>
+    </div>
+
+</div>
+
+</body>
 </html>

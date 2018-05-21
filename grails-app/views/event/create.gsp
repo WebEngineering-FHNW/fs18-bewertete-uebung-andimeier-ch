@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'event.label', default: 'Event')}" />
-        <title><g:message code="default.create.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#create-event" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-            </ul>
+<head>
+    <meta name="layout" content="main" />
+    <title>Neues Ereignis</title>
+</head>
+<body>
+
+<nav class="navbar is-primary">
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/event" title="Zurück">
+                <i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>
+            </a>
         </div>
-        <div id="create-event" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.event}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="${this.event}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
-            </ul>
-            </g:hasErrors>
-            <g:form resource="${this.event}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="event"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
-        </div>
-    </body>
+    </div>
+</nav>
+
+<main class="section">
+    <div class="container">
+        <h1 class="title">Ereignis hinzufügen</h1>
+
+        <g:form resource="${this.event}" method="POST">
+            <f:all bean="event"/>
+
+            <div class="field is-horizontal">
+                <div class="field-label"></div>
+                <div class="field-body">
+                    <div class="field is-grouped">
+                        <div class="control">
+                            <g:submitButton name="create" class="button is-primary save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                        </div>
+                        <div class="control">
+                            <a class="button is-secondary" href="/event">Abbrechen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </g:form>
+
+    </div>
+</main>
+
+
+
+</body>
 </html>
