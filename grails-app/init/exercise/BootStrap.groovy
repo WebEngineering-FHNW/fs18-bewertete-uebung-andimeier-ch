@@ -35,6 +35,57 @@ class BootStrap {
             person: mael
         ).save(failOnError: true)
 
+        Event event1 = new Event(
+            date: Date.parse("dd.MM.yyyy", "01.06.2018"),
+            description: "Event 1",
+            person: sara
+        ).save(failOnError: true)
+        Event event2 = new Event(
+            date: Date.parse("dd.MM.yyyy", "03.06.2018"),
+            description: "Event 2",
+            person: mael
+        ).save(failOnError: true)
+        Event event3 = new Event(
+            date: Date.parse("dd.MM.yyyy", "04.06.2018"),
+            description: "Event 3",
+            person: joelle
+        ).save(failOnError: true)
+        Event event4 = new Event(
+            date: Date.parse("dd.MM.yyyy", "06.06.2018"),
+            description: "Event 4",
+            person: tabita
+        ).save(failOnError: true)
+        Event event5 = new Event(
+            date: Date.parse("dd.MM.yyyy", "08.06.2018"),
+            description: "Event 5",
+            person: joelle
+        ).save(failOnError: true)
+        Event event6 = new Event(
+            date: Date.parse("dd.MM.yyyy", "09.06.2018"),
+            description: "Event 6",
+            person: sara
+        ).save(failOnError: true)
+        Event event7 = new Event(
+            date: Date.parse("dd.MM.yyyy", "12.06.2018"),
+            description: "Event 7",
+            person: andi
+        ).save(failOnError: true)
+        Event event8 = new Event(
+            date: Date.parse("dd.MM.yyyy", "15.06.2018"),
+            description: "Event 8",
+            person: tabita
+        ).save(failOnError: true)
+        Event event9 = new Event(
+            date: Date.parse("dd.MM.yyyy", "18.06.2018"),
+            description: "Event 9",
+            person: andi
+        ).save(failOnError: true)
+        Event event10 = new Event(
+            date: Date.parse("dd.MM.yyyy", "20.06.2018"),
+            description: "Event 10",
+            person: tabita
+        ).save(failOnError: true)
+
     }
     def destroy = {
     }

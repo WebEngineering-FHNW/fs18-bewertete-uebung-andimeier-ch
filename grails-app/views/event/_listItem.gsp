@@ -13,7 +13,7 @@
         </a>
         <a class="list-action icon" href="/event/delete/${event.id}">
             <g:form resource="${this.event}" method="DELETE">
-                <input type="submit" value="${message(code: '&#xf1f8;', default: '&#xf1f8;')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+                <input type="submit" value="&#xf1f8;" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
             </g:form>
         </a>
     </div>

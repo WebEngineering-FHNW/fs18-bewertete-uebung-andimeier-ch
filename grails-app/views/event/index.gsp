@@ -6,7 +6,7 @@
 
 <body>
 
-<div class="columns">
+<div class="columns list-screen">
 
     %{--Events index--}%
     <div class="column is-half">
