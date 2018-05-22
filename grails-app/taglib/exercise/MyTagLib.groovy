@@ -1,13 +1,20 @@
 package exercise
 
 class MyTagLib {
+    static defaultEncodeAs = 'raw'
+    static namespace = 'exercise'
+
+    def navbar = { attrs, body ->
+        out << '<nav class="navbar is-primary"><div class="navbar-menu">'
+        out << body()
+        out << '</div></nav>'
+    }
+
     def listUrl = { attrs, body ->
-        def params = ''
         if (attrs.person) {
-            params = "?person=${attrs.person}&event=${attrs.event}"
+            out << "?person=${attrs.person}&event=${attrs.event}"
         } else {
-            params = "?event=${attrs.event}"
+            out << "?event=${attrs.event}"
         }
-        out << params
     }
 }

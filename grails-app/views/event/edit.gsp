@@ -6,15 +6,13 @@
 </head>
 <body>
 
-<nav class="navbar is-primary">
-    <div class="navbar-menu">
-        <div class="navbar-start">
-            <g:link class="navbar-item" action="edit" resource="${this.event}">
-                <i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>
-            </g:link>
-        </div>
+<exercise:navbar>
+    <div class="navbar-start">
+        <g:link class="navbar-item" action="index" resource="${this.event}">
+            <i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>
+        </g:link>
     </div>
-</nav>
+</exercise:navbar>
 
 <main class="section">
     <div class="container">

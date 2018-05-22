@@ -6,16 +6,13 @@
 </head>
 <body>
 
-<nav class="navbar is-primary">
-    <div class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item" href="/event" title="Zurück">
-                <i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>
-            </a>
-        </div>
+<exercise:navbar>
+    <div class="navbar-start">
+        <a class="navbar-item" href="/event" title="Zurück">
+            <i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>
+        </a>
     </div>
-</nav>
-
+</exercise:navbar>
 <main class="section">
     <div class="container">
         <h1 class="title">Ereignis hinzufügen</h1>
