@@ -47,7 +47,7 @@
     </div>
 
     %{--Details panel--}%
-    <div id="details" class="column is-half">
+    <div id="details" class="column is-half ${activeEvent != 0 ? 'is-active' : ''}">
         <button id="detailsHide" class="delete is-inline-block-mobile"></button>
 
         <g:if test="${flash.message}">

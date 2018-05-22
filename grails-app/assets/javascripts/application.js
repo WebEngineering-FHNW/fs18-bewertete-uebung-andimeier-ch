@@ -6,7 +6,6 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery-2.2.0.min
-//= require bootstrap
 //= require_tree .
 //= require_self
 
@@ -22,21 +21,10 @@ if (typeof jQuery !== 'undefined') {
 
 /* Toggle subnav for person filter */
 function toggleSubnav(event) {
-    $(event.currentTarget).find('.navbar-dropdown').fadeToggle('fast');
-}
-
-/* Show details on click */
-var listItems = $('.list-item');
-console.log(listItems);
-listItems.each(function() {
-    $(this).click(showDetails);
-});
-
-function showDetails() {
-    $('#details').show();
+    $(event.currentTarget).find('.navbar-dropdown').toggle(300);
 }
 
 /* Hide details */
 $('#detailsHide').click(function() {
-    $('#details').hide();
+    $('#details').removeClass('is-active');
 });
