@@ -1,13 +1,11 @@
 <li class="list-item ${activeEvent == event.id ? 'has-background-white-bis' : ''}">
-    <a class="list-item-flex-container has-text-grey-dark" href="/event?event=${event.id}">
+    <a class="list-item-flex-container has-text-grey-dark" href="/event<g:listUrl person="${params.person}" event="${event.id}" />">
         <asset:image src="${event.person}.svg" alt="Avatar" class="list-image"/>
         <div class="list-content">
             <h3 class="list-heading has-text-primary">${event.description}</h3>
             <p class="list-description"><g:formatDate format="dd.MM.yyyy" date="${event.date}"/></p>
         </div>
     </a>
-
-
 
     <div class="list-actions">
         <a class="list-action icon" href="/event/edit/${event.id}">
