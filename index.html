@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webeC Projekt Beschreibung</title>
+
+    <style>
+        html {
+            font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        img {
+            display: block;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 4rem auto;
+        }
+
+        .link {
+            text-decoration: none;
+            color: #00d1b2;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            display: flow-root;
+            text-align: center;
+            background: white linear-gradient(to top, #9890e3 0%, #b1f4cf 100%) top/100% 80% no-repeat;
+        }
+
+        .hero-title {
+            margin-top: 7rem;
+            margin-bottom: 7rem;
+            font-size: 5rem;
+            line-height: 1;
+            color: hsla(0, 100%, 100%, .75);
+        }
+
+        .hero-lead {
+            font-size: 1.2rem;
+            color: hsla(0, 0%, 0%, .8);
+        }
+
+        .hero-image {
+            border-radius: 4px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        .footer {
+            padding-top: 4rem;
+            padding-bottom: 1rem;
+            background-color: #9890e3;
+            color: hsla(0, 100%, 100%, .8);
+        }
+
+        .footer-text {
+            margin: 0 auto;
+            text-align: right;
+        }
+
+        .footer-link {
+            color: hsla(0, 100%, 100%, .8);
+            text-decoration: underline;
+        }
+
+        .footer-link:hover {
+            color: #b1f4cf;
+        }
+    </style>
+
+</head>
+<body>
+
+<header class="hero">
+    <h1 class="hero-title">Noch wieviel mal schlafen?</h1>
+    <p class="hero-lead container">
+        Meine Kinder fragen ständig, wie viel mal sie noch schlafen müssen, bis sie Geburtstag haben.
+        Mit dieser App können sie ganz einfach nachschauen, wieviele Tage es noch sind bis zu einem bestimmten Ereignis.
+    </p>
+    <img class="hero-image container" src="screenshot.png" alt="Screenshot of the App">
+</header>
+
+<main>
+    <section class="container">
+        <h2>Features</h2>
+        <ul>
+            <li>Erfassen von neuen Ereignissen</li>
+            <li>Jedes Ereignis kann einem Familienmitglied zugeordnet werden</li>
+            <li>Anzeigen einer Liste mit allen Ereignissen</li>
+            <li>Filtern der Ereignisliste nach Person</li>
+            <li>Natürlich ist alles responsive</li>
+        </ul>
+    </section>
+
+    <section class="container">
+        <h2>Benutzte Technologien</h2>
+        <ul>
+            <li><a class="link" href="https://grails.org/" target="_blank">Grails Framework</a></li>
+            <li><a class="link" href="https://bulma.io" target="_blank">Bulma CSS Framework</a></li>
+        </ul>
+    </section>
+</main>
+
+<footer class="footer">
+    <p class="footer-text container">
+        <small>Ein Projekt von <a class="footer-link" href="mailto:andreas.meier4@students.fhnw.ch">Andreas Meier</a></small>
+    </p>
+</footer>
+
+</body>
+</html>

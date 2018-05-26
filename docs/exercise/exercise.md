@@ -70,14 +70,18 @@ How to start the project: (if other than `grailsw run-app`)
 
 How to test the project:  (if other than `grailsw test-app`)
 
-Hand-written, static HTML 
-project description:      (if other than `index.html` in project root directory)
+Hand-written, static HTML project description: (if other than `index.html` in project root directory)
 
 External contributions:
+- [Bulma](https://bulma.io): CSS Framework (assets/stylesheets/bulma.min.css)
+- [Fontawesome 4](https://fontawesome.com/v4.7.0/): Icons (über CDN in views/layouts/main.gsp)
 
 Other comments: 
 
 I'm particular proud of:
+
+Das responsive Verhalten des Details Panel: auf dem Desktop erscheint es neben der List, auf Mobile ist es ein Overlay, 
+das erscheint und wieder geschlossen werden kann. Für beides wird das gleiche HTML benutzt.
 
 
 ## Project grading 
