@@ -2,15 +2,15 @@
 <html>
 <head>
     <meta name="layout" content="main" />
-    <title>Event bearbeiten</title>
+    <title>Ereignis bearbeiten</title>
 </head>
 <body>
 
 <exercise:navbar>
     <div class="navbar-start">
-        <g:link class="navbar-item" action="index" resource="${this.event}">
+        <a class="navbar-item" href="/event" title="Zurück">
             <i class="fa fa-lg fa-chevron-left" aria-hidden="true"></i>
-        </g:link>
+        </a>
     </div>
 </exercise:navbar>
 

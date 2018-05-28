@@ -45,7 +45,7 @@
         <button id="detailsHide" class="delete is-inline-block-mobile"></button>
 
         <g:if test="${flash.message}">
-            <div class="notification is-info" role="status">${flash.message}</div>
+            <div class="notification is-success" role="status">${flash.message}</div>
         </g:if>
 
         <div class="is-centered">
@@ -53,7 +53,7 @@
                 Du musst noch<br>
                 <span class="is-size-1">${remainingDays}</span><br>
                 mal schlafen<br>
-                bis ${eventTitle}
+                bis <span class="details-eventtitle">${eventTitle}</span>
             </p>
         </div>
     </div>

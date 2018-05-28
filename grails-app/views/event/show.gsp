@@ -19,7 +19,7 @@
         <h1 class="title">Der Event wurde gespeichert</h1>
 
         <g:if test="${flash.message}">
-            <div class="notification is-success" role="status">${flash.message}</div>
+            <div class="notification is-success" role="status">Das Ereignis wurde gespeichert.</div>
         </g:if>
 
         <div class="content">

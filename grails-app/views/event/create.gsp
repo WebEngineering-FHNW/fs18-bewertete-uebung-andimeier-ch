@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="layout" content="main" />
-    <title>Neues Ereignis</title>
+    <title>Ereignis hinzufügen</title>
 </head>
 <body>
 

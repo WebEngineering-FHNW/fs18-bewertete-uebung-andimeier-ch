@@ -9,5 +9,6 @@
 *
 *= require bulma.min.css
 *= require main
+*= require errors.css
 *= require_self
 */
