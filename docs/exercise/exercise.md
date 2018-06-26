@@ -86,4 +86,20 @@ das erscheint und wieder geschlossen werden kann. Für beides wird das gleiche H
 
 ## Project grading 
 
-< to be filled by lecturer>
+Static html description given and fully valid.
+
+The application works fine.
+
+Functionality is CRUD operations over one domain class Event with many-to-one relation to Person, which cannot
+be managed through the application (good: the controller actively prevents url spoofing).
+This comes with a very nice responsive master-detail view.
+
+Commit log over 6 days is ok but could be more fine-granular.
+Very nice UI integration tests, no unit tests.
+HTML validity has a number of issues. First and foremost: Duplicate ID _method.
+
+I award you two extra points, one for the artistic value and one for the really nice solution
+to create a responsive master-detail view with bare html/css.
+Its a small app but it is nicely done!
+
+Grade: 5.6
